@@ -1,2 +1,2 @@
 # CV
-Curriculum vitae
+Custom resume using Vanilla JS and SCSS
