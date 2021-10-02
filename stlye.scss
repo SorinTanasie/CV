@@ -1,0 +1,264 @@
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+p{
+    font-size: 1.125rem;
+}
+li{
+    font-size: 1.125rem;
+    margin: 1rem 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin: 0 1rem;
+
+}
+
+#profile-picture{
+    background-image: url("profilePicture2.jfif");
+    width: 230px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20%;
+    float: right;
+}
+.wave{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    max-height: 300px;
+}
+.background{
+    background-color: #F3F3F3;
+    z-index: -1;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+
+
+
+
+.grid-container{
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 4em!important;
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-row-gap:1em;
+    grid-column-gap: 3em;
+
+
+    grid-template-areas:
+     "header header"
+     "side-info main-details"
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    .title{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .name{
+            font-size: 5em;
+            margin: 0;
+            font-weight: 100;
+            letter-spacing: 5px;
+            max-width: max-content;
+
+            position: relative;
+            border-right: 2px solid rgba(0, 0, 0, 0.75);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;  
+
+            // Animation
+
+            animation: typewriter 1s steps(20) 1s 1 normal both,
+            blinkTextCursor 500ms steps(20) infinite normal;
+            
+            span{
+                font-weight: 900;
+            }
+        }
+
+        .vertical-line{
+            border-left: 2.5px solid black;
+            height: 6em;
+            margin-left: 3px;
+        }
+        .dot {
+            height: 9px;
+            width: 9px;
+            background-color: #000;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 10px;
+          }
+        
+    }
+}
+
+.side-info{
+    grid-area: side-info;
+
+    .contact{
+        .contact-method{
+            font-size: 1.1em;
+            display: flex;
+            margin: 1em 0;
+
+            p{
+                margin: 0 1em ;
+            }
+        }
+    }
+
+
+    ul{
+        padding-inline-start: 20px;
+            ::marker{
+                font-size: 20px;
+            }
+    }
+    li::marker{
+            font-size: 20px;
+            margin: 0;
+    }
+ 
+   
+    .university{
+        border-left: 2.5px solid black;
+        padding-left: 25px;
+        position: relative;
+        margin: 7px 2px;
+        p{
+            margin: 10px;
+        }
+    }
+    
+    .education{
+        li{
+            font-weight: bold;
+        }
+    }
+}
+
+
+.main-details{
+    grid-area: main-details;
+    margin-bottom: 4rem;
+    h2{
+        letter-spacing: 5px;
+    }
+
+    .title{
+        display: flex;
+        justify-content: space-between;
+        color: #646464;
+        letter-spacing: 2px;
+        h4{
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+}
+
+@keyframes typewriter{
+    from{width: 0;}
+    to{width: 100%;}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(0, 0, 0, 0.75);}
+    to{border-right-color: transparent;}
+  }
+  
+
+@media (max-width: 1000px){
+    .header .title .name{
+            font-size: 4em;
+        }
+    
+    .grid-container{
+        width: 85%;
+    }
+    #profile-picture{
+        width: 180px;
+        height: 180px;
+    }
+}
+@media (max-width: 1000px){
+    .title{
+        .name{
+            font-size: 4em;
+        }
+    }
+    .grid-container{
+        width: 85%;
+    }
+    #profile-picture{
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px){
+    
+       .wave {
+        position: absolute; 
+        height: 100%; 
+        width: 100%; 
+        left: 0; 
+        top: 0;
+       }
+    
+    .grid-container{
+        grid-template-columns: 100%;
+        grid-row-gap:1em;
+        grid-column-gap: 4em;
+        word-wrap: break-word;
+    
+        grid-template-areas:
+         "header"
+         "header"
+         "side-info"
+         "main-details"
+
+         
+    }
+    .header{
+        flex-direction: column-reverse;
+        
+        .title{
+
+            .name{
+                font-size: 2.7em;
+                align-self: center;
+            }
+            .job-title{
+                align-self: center;
+            }
+        }
+
+        #profile-picture{
+            margin: 3em auto;
+        }
+    }
+}
+
+@media (max-width: 375px){
+    .header .title .name{
+        font-size: 1.7em;
+    }
+}
